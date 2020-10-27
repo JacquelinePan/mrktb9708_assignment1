@@ -14,13 +14,13 @@ label variable eliteschoolcandidate "Elite School Candidate"
 label variable bigcompanycandidate "Big Company Candidate"
 
 *Run Regression
-reg calledback eliteschoolcandidate recruiteriswhite recruiterismale malecandidate bigcompanycandidate 
+reg calledback eliteschoolcandidate recruiteriswhite recruiterismale bigcompanycandidate, r 
 
 * Store regression
 eststo CallBack
 
 *export to LaTeX
-esttab CallBack using Assignment1.tex, $tableoptions keep(eliteschoolcandidate recruiteriswhite recruiterismale malecandidate bigcompanycandidate _cons) star(* 0.10 ** 0.05 *** 0.01) collabels(none) stats(r2 n_ind N, fmt(%9.4f %9.0f %9.0fc) labels("R-squared" "Number of observations")) plain noabbrev nonumbers lines parentheses fragment
+esttab CallBack using Assignment1.tex, $tableoptions keep(eliteschoolcandidate recruiteriswhite recruiterismale bigcompanycandidate _cons) star(* 0.10 ** 0.05 *** 0.01) collabels(none) stats(r2 n_ind N, fmt(%9.4f %9.0f %9.0fc) labels("R-squared" "Number of observations")) plain noabbrev nonumbers lines parentheses fragment
 
 
 
